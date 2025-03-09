@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Added smooth scrolling */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: black;
+    background-image: linear-gradient(to bottom, #000000, #525454);
+
+}
+
+header {
+    background-image: linear-gradient(to right, #000000, #525454);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    /* Center navigation */
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.2s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Section Layout */
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow responsiveness */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Text Box */
+.section div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section h1 {
+    font-size: 38px;
+    color: white;
+}
+
+.section h1 span {
+    color: rgb(140, 132, 14);
+}
+
+.section p {
+    font-style: italic;
+    color: gainsboro;
+}
+
+.section p span {
+    color: rgb(140, 132, 14);
+}
+
+/* Button Styling */
+.section div:first-child>button {
+    padding: .8rem 2rem;
+    background-color: rgb(23, 88, 209);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(85, 84, 84, 0.472);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.section div:first-child>button:hover {
+    background-color: rgb(18, 70, 170);
+    /* Darker blue */
+}
+
+/* Image Styling */
+.section img {
+    width: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
+    max-width: 500px;
+    /* Prevents too large images */
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(85, 84, 84, 0.472);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.contact {
+    padding: 2rem;
+}
+
+.contact h2 {
+    color: rgb(140, 132, 14);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    color: gainsboro;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: .8rem;
+    border-radius: 5px;
+    border: 1px solid #333;
+    font-size: 1rem;
+}
+
+form button {
+    background: rgb(18, 70, 170);
+    color: #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: rgb(23, 88, 209);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Adds a subtle glow effect */
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 1s ease forwards;
+}
+
+footer {
+    background-image:
+        linear-gradient(to left, #f3f4f5, #525454);
+    padding: 1rem 0;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+}
+
+.about-section {
+    padding: 50px;
+
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.about-section img {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

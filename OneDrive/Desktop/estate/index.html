@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="">Portofolio</a></li>
+                <li><a href="#kontakto">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="seksioniPar" class="section">
+            <div>
+                <h1 class="slide-in">Po Kerkoni <span>Shtepine</span> ideale per Familjen tuaj!</h1>
+                <p class="slide-in">Ne e kemi <span> Celsin </span> e saj.</p>
+                <button id="myButton">Explore More</button>
+            </div>
+            <div class="slide-in">
+                <img src="pic.1.jpg" alt="">
+            </div>
+        </section>
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Rreth Nesh</h2>
+                <p>Ne jemi një kompani lider në tregun e pasurive të paluajtshme, duke ndihmuar klientët tanë të gjejnë
+                    shtëpinë e tyre të ëndrrave.</p>
+                <p>Me përvojë shumëvjeçare dhe një ekip profesional, ne ofrojmë shërbime të specializuara për blerje,
+                    shitje dhe investime në prona.</p>
+                <img src="rrethnesh.jpeg" alt="Rreth Nesh">
+            </div>
+        </section>
+
+        <section id="kontakto" class="contact">
+            <h2>Contact Us
+            </h2>
+            <p>Have a project in mind? We'd love to hear from you!
+            </p>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+
+    <script>
+
+        document.getElementById("myButton").addEventListener("click", function () {
+            alert("Button Clicked!");
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".slide-in, .about-section");
+
+            function checkScroll() {
+                elements.forEach(element => {
+                    const position = element.getBoundingClientRect().top;
+                    if (position < window.innerHeight - 100) {
+                        element.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); // Run on page load
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutSection = document.querySelector(".about-section");
+
+            function checkScroll() {
+                const position = aboutSection.getBoundingClientRect().top;
+                if (position < window.innerHeight - 100) {
+                    aboutSection.classList.add("visible");
+                }
+            }
+
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+        });
+
+    </script>
+
+</body>
+<footer>
+    <p>© 2025 Creative Edge. All rights reserved.</p>
+</footer>
+
+</html>
