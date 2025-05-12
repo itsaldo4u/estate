@@ -1,232 +1,686 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
-    /* Added smooth scrolling */
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    color: black;
-    background-image: linear-gradient(to bottom, #000000, #525454);
-
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: black;
+  background-image: linear-gradient(to bottom, #000000, #525454);
 }
 
 header {
-    background-image: linear-gradient(to right, #000000, #525454);
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
+  background-image: linear-gradient(to right, #000000, #525454);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 header nav {
-    display: flex;
-    justify-content: center;
-    /* Center navigation */
+  display: flex;
+  justify-content: center;
+  /* Center navigation */
 }
 
 header nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style-type: none;
 }
 
 nav a {
-    text-decoration: none;
-    color: aliceblue;
-    font-size: 1.1rem;
-    position: relative;
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 1.1rem;
+  position: relative;
 }
 
 nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.2s ease-in-out;
 }
 
 nav a:hover::after {
-    width: 100%;
+  width: 100%;
+}
+/* Stilizimi i search bar-it */
+.kerko input {
+  padding: 8px 15px;
+  font-size: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  width: 180px;
+}
+
+.kerko input:focus {
+  border-color: #ffd700;
+  background: rgba(255, 255, 255, 0.2);
+  width: 220px;
+}
+
+/* Për të siguruar që input-i të jetë në harmoni me menunë */
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  display: none;
+  list-style: none;
+  padding: 0;
+  min-width: 150px;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+}
+
+.dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-size: 1rem;
+  padding: 8px 15px;
+}
+
+.dropdown-menu li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 /* Section Layout */
 .section {
-    display: flex;
-    flex-wrap: wrap;
-    /* Allow responsiveness */
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 2rem;
-    padding: 2rem;
+  position: relative;
+  height: 100vh; /* Full height */
+  width: 100%;
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: flex-start; /* Align items to the left */
+  padding: 80px; /* Padding around the content */
+  color: white;
+  text-align: left;
+  overflow: hidden; /* Hide overflow */
+  background: url("pic.1.jpg") no-repeat center center/cover; /* Background image */
 }
 
-/* Text Box */
-.section div:first-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+/* Content Wrapper */
+.content-wrapper {
+  position: absolute; /* Position absolute to place it correctly */
+  top: 20%; /* Position it lower from the top */
+  left: 50px; /* Position it from the left */
+  z-index: 1; /* Ensure content is above the background */
+  max-width: 500px; /* Limit width of text content */
 }
 
 .section h1 {
-    font-size: 38px;
-    color: white;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .section h1 span {
-    color: rgb(140, 132, 14);
+  color: #ffd700;
 }
 
 .section p {
-    font-style: italic;
-    color: gainsboro;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .section p span {
-    color: rgb(140, 132, 14);
+  color: #ffd700;
 }
 
 /* Button Styling */
-.section div:first-child>button {
-    padding: .8rem 2rem;
-    background-color: rgb(23, 88, 209);
-    border-radius: 5px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(85, 84, 84, 0.472);
-    transition: background-color 0.2s ease-in-out;
+.main-icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  /* Remove transform here to avoid positioning confusion */
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  z-index: 10;
+}
+.main-icon img {
+  width: 100%; /* Reduced from 200% to fit container properly */
+  height: 100%;
+  object-fit: contain;
+}
+.icon img {
+  width: 100%; /* Make slightly smaller than container */
+  height: 100%;
+  object-fit: contain;
 }
 
-.section div:first-child>button:hover {
-    background-color: rgb(18, 70, 170);
-    /* Darker blue */
+/* Container for the hidden icons */
+.icons-container {
+  position: absolute;
+  top: 20%; /* Match main icon's position */
+  left: 80%; /* Match main icon's position */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 5;
+}
+.icons-container.show {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Image Styling */
-.section img {
-    width: 100%;
-    height: auto;
-    /* Maintain aspect ratio */
-    max-width: 500px;
-    /* Prevents too large images */
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(85, 84, 84, 0.472);
+/* Individual dynamic icons */
+.icon {
+  width: 40px;
+  height: 40px;
+  background-color: #1268aa;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  opacity: 0;
+  position: absolute;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-html {
-    scroll-behavior: smooth;
+.icon-image {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+/* Tail */
+.tail {
+  position: absolute;
+  height: 2px; /* Thin line */
+  background-color: #1268aa;
+  transition: width 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  z-index: -1;
+  right: 100%; /* Position at the right edge of the icon */
+  top: 50%;
+}
+
+.show .icon .tail {
+  opacity: 1;
+}
+
+.icon1 .tail {
+  width: 60px; /* Width between icon1 and main icon */
+}
+
+.icon2 .tail {
+  width: 60px; /* Width between icon2 and icon1 */
+}
+
+.icon3 .tail {
+  width: 60px; /* Width between icon3 and icon2 */
+}
+
+/* Show icons when activated */
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon1 {
+  transform: translate(-100px, 0); /* Left of main icon */
+}
+
+.icon2 {
+  transform: translate(-180px, 0); /* Further left */
+}
+
+.icon3 {
+  transform: translate(-260px, 0); /* Even further left */
+}
+
+/* Background Image */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("pic.1.jpg") no-repeat center center/cover; /* Background image */
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s forwards; /* Animation for fade-in */
+  z-index: 0; /* Behind the content */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start fully transparent */
+  }
+  100% {
+    opacity: 1; /* End fully opaque */
+  }
+}
+
+/* Dynamic Buttons */
+.hidden {
+  display: none; /* Hide the buttons by default */
+}
+
+.dynamic-btn {
+  display: block; /* Make buttons block elements */
+  margin: 10px 0; /* Add some margin */
+  padding: 10px 20px; /* Add padding */
+  background-color: rgba(23, 88, 209, 0.8); /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.dynamic-btn:hover {
+  background-color: rgba(18, 70, 170, 0.9); /* Darker background on hover */
+}
+
+/* Slide-in Animation for Text */
+.slide-in {
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  animation: slideIn 0.5s forwards; /* Animation for slide-in */
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1; /* End fully opaque */
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Add delay for each element */
+.slide-in:nth-child(1) {
+  animation-delay: 0.5s; /* Delay for h1 */
+}
+
+.slide-in:nth-child(2) {
+  animation-delay: 1s; /* Delay for p */
+}
+
+.open-btn {
+  animation-delay: 1.5s; /* Delay for button */
+}
+/* Slide-in Animation for Text */
+.slide-in {
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  animation: slideIn 0.5s forwards; /* Animation for slide-in */
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1; /* End fully opaque */
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Add delay for each element */
+.slide-in:nth-child(1) {
+  animation-delay: 0.5s; /* Delay for h1 */
+}
+
+.slide-in:nth-child(2) {
+  animation-delay: 1s; /* Delay for p */
+}
+
+.open-btn {
+  animation-delay: 1.5s; /* Delay for button */
+}
+/* Slide-in Animation for Text */
+.slide-in {
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  animation: slideIn 0.5s forwards; /* Animation for slide-in */
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1; /* End fully opaque */
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Add delay for each element */
+.slide-in:nth-child(1) {
+  animation-delay: 0.5s; /* Delay for h1 */
+}
+
+.slide-in:nth-child(2) {
+  animation-delay: 1s; /* Delay for p */
+}
+
+.open-btn {
+  animation-delay: 1.5s; /* Delay for button */
+}
+/* SLIDER */
+
+.slide {
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Disable pointer events on images to make the anchor clickable */
+}
+
+:root {
+  --items-count: 6; /* Total number of slides */
+  --width: 370px; /* Width of each slide */
+  --height: 200px; /* Height of each slide */
+  --duration: 30s; /* Duration for one complete loop */
+}
+
+.slider {
+  width: 100%; /* Full width of the container */
+  height: var(--height); /* Height of each slide */
+  will-change: transform;
+  position: relative;
+  overflow: hidden; /* Prevent scrolling */
+  display: flex;
+  justify-content: flex-start; /* Align slides to the left */
+  animation: slide-animation var(--duration) linear infinite; /* Infinite loop animation */
+}
+
+.slide {
+  position: relative;
+  width: var(--width); /* Width of each slide */
+  height: var(--height); /* Height of each slide */
+  display: inline-block; /* Make slides appear side by side */
+}
+
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.slider .slide:hover .info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slider .slide:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+  transition: transform 0.3s ease;
+}
+
+.slider .info h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.slider .info p {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Pause animation on hover */
+.slider:hover {
+  animation-play-state: paused;
+}
+
+/* Keyframe for continuous sliding */
+@keyframes slide-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Move all slides to the left */
+  }
+}
+/* Duplicate the slides by adding the same items again */
+.slider .slide:last-child {
+  margin-right: 0;
+}
+
+.slider .slides-wrapper {
+  display: flex;
+  transition: transform 0s; /* Prevent any delays */
+}
+
+/* .slider .slides-wrapper > .slide { */
+/* You can add any styles to control slide appearance */
+/* } */
+
+/* Ensure the first slides appear after the last one seamlessly */
+.slider .slides-wrapper {
+  animation: slide-animation var(--duration) linear infinite;
 }
 
 .contact {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .contact h2 {
-    color: rgb(140, 132, 14);
-    text-align: center;
-    margin-bottom: 1rem;
+  color: rgb(140, 132, 14);
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .contact p {
-    color: gainsboro;
-    text-align: center;
-    margin-bottom: 1.5rem;
+  color: gainsboro;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 form input,
 form textarea,
 form button {
-    width: 100%;
-    padding: .8rem;
-    border-radius: 5px;
-    border: 1px solid #333;
-    font-size: 1rem;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  font-size: 1rem;
 }
 
 form button {
-    background: rgb(18, 70, 170);
-    color: #fff;
-    cursor: pointer;
+  background: rgb(18, 70, 170);
+  color: #fff;
+  cursor: pointer;
 }
 
 form button:hover {
-    background-color: rgb(23, 88, 209);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    /* Adds a subtle glow effect */
+  background-color: rgb(23, 88, 209);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Adds a subtle glow effect */
 }
 
-
 @keyframes slideIn {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .slide-in {
-    animation: slideIn 1s ease forwards;
+  animation: slideIn 1s ease forwards;
 }
 
-footer {
-    background-image:
-        linear-gradient(to left, #f3f4f5, #525454);
-    padding: 1rem 0;
+.moving-line {
+  position: absolute;
+  top: 0px;
+  left: -100px;
+  width: 50px;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #00bfff, transparent);
+  border-radius: 10px;
+  opacity: 0;
+  animation: moveLine 5s ease-in-out infinite;
 }
 
-footer p {
-    color: white;
-    text-align: center;
+@keyframes moveLine {
+  0% {
+    left: -100px;
+    width: 50px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    width: 150px; /* Zgjerohet në mes */
+    filter: blur(2px);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    width: 50px; /* Kthehet në madhësinë fillestare */
+    opacity: 0;
+  }
 }
 
+/* Initial state - the section is scaled down */
 .about-section {
-    padding: 50px;
+  background: url("rrethnesh.jpeg") no-repeat center center/cover;
+  padding: 60px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh; /* Ensures the section takes the full height of the viewport */
+}
+.container {
+  backdrop-filter: blur(10px);
+}
+.background-image-two {
+  background: url("pic.2.jpg") no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5; /* Makes the background slightly transparent */
+  z-index: -1; /* Places the background image behind the content */
+}
 
-    text-align: center;
+/* Fade-in animation for background */
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* State when the section becomes visible */
+.about-section.visible {
+  opacity: 1; /* Make it fully visible */
+  transform: scale(1); /* Scale it up to 100% */
 }
 
 .about-section h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .about-section p {
-    font-size: 1.2em;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 800px; /* Makes sure text doesn't overflow the screen */
+  margin: 0 auto; /* Centers the paragraph */
+  line-height: 1.5;
 }
 
-.about-section img {
-    width: 80%;
-    max-width: 600px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+footer {
+  background-image: linear-gradient(to left, #f3f4f5, #525454);
+  padding: 1rem 0;
+}
+
+footer p {
+  color: white;
+  text-align: center;
 }

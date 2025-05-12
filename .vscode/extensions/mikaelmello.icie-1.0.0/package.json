@@ -1,0 +1,401 @@
+{
+	"name": "icie",
+	"version": "1.0.0",
+	"publisher": "mikaelmello",
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"displayName": "ICIE (with g++ in Linux)",
+	"description": "Competitive programming IDE-as-a-VS-Code-plugin (with g++ in Linux)",
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"competitive",
+		"contest",
+		"codeforces",
+		"atcoder",
+		"codechef"
+	],
+	"galleryBanner": {
+		"color": "#6d0759",
+		"theme": "dark"
+	},
+	"license": "MPL-2.0",
+	"repository": "https://github.com/mikaelmello/icie",
+	"main": "icie.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "icie.auth.resetFromList",
+				"title": "ICIE Password reset from list"
+			},
+			{
+				"command": "icie.auth.resetFromUrl",
+				"title": "ICIE Password reset from URL"
+			},
+			{
+				"command": "icie.compile.manual",
+				"title": "ICIE Compile manually"
+			},
+			{
+				"command": "icie.launch.nearby",
+				"title": "ICIE Launch nearby"
+			},
+			{
+				"command": "icie.launch.statement",
+				"title": "ICIE Statement"
+			},
+			{
+				"command": "icie.launch.webContest",
+				"title": "ICIE Web Contest"
+			},
+			{
+				"command": "icie.launch.webTask",
+				"title": "ICIE Web Task"
+			},
+			{
+				"command": "icie.open.scan",
+				"title": "ICIE Open Scan"
+			},
+			{
+				"command": "icie.open.url",
+				"title": "ICIE Open URL"
+			},
+			{
+				"command": "icie.paste.qistruct",
+				"title": "ICIE Quick Input struct"
+			},
+			{
+				"command": "icie.paste.quick",
+				"title": "ICIE Quick Paste"
+			},
+			{
+				"command": "icie.stress.open",
+				"title": "ICIE Stress"
+			},
+			{
+				"command": "icie.submit.send",
+				"title": "ICIE Submit"
+			},
+			{
+				"command": "icie.template.configure",
+				"title": "ICIE Template configure"
+			},
+			{
+				"command": "icie.template.instantiate",
+				"title": "ICIE Template instantiate"
+			},
+			{
+				"command": "icie.terminal.spawn",
+				"title": "ICIE Terminal"
+			},
+			{
+				"command": "icie.test.input",
+				"title": "ICIE New Test"
+			},
+			{
+				"command": "icie.test.view",
+				"title": "ICIE Open Test View"
+			},
+			{
+				"command": "icie.test.viewCurrent",
+				"title": "ICIE Open Test View (current editor)"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "icie.compile.manual",
+				"key": "alt+;"
+			},
+			{
+				"command": "icie.launch.nearby",
+				"key": "alt+backspace"
+			},
+			{
+				"command": "icie.launch.statement",
+				"key": "alt+8"
+			},
+			{
+				"command": "icie.open.scan",
+				"key": "alt+f9"
+			},
+			{
+				"command": "icie.open.url",
+				"key": "alt+f11"
+			},
+			{
+				"command": "icie.paste.qistruct",
+				"key": "alt+i"
+			},
+			{
+				"command": "icie.paste.quick",
+				"key": "alt+["
+			},
+			{
+				"command": "icie.stress.open",
+				"key": "alt+9"
+			},
+			{
+				"command": "icie.submit.send",
+				"key": "alt+f12"
+			},
+			{
+				"command": "icie.template.instantiate",
+				"key": "alt+="
+			},
+			{
+				"command": "icie.terminal.spawn",
+				"key": "alt+t"
+			},
+			{
+				"command": "icie.test.input",
+				"key": "alt+-"
+			},
+			{
+				"command": "icie.test.view",
+				"key": "alt+0"
+			},
+			{
+				"command": "icie.test.viewCurrent",
+				"key": "alt+\\ alt+0"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "ICIE (with g++ in Linux)",
+			"properties": {
+				"icie.checker.timeLimit": {
+					"default": 1500,
+					"description": "The maximum time a checker executable can run before getting killed, specified in milliseconds. Killing will cause the test to be classified as failed. Leaving this empty(which denotes no limit) is not recommended, because this will cause stuck processes to run indefinitely, wasting system resources.",
+					"type": [
+						"null",
+						"number"
+					]
+				},
+				"icie.compile.additionalCppFlags": {
+					"default": "",
+					"description": "Additional C++ compilation flags. The flags will be appended to the command line after the standard, warning, debug symbols and optimization flags. These flags will be used both in Debug and Release profiles.",
+					"type": "string"
+				},
+				"icie.compile.additionalCppFlagsDebug": {
+					"default": "",
+					"description": "Additional C++ compilation flags used in Debug profile. The flags will be appended to the command line after the standard, warning, debug symbols, optimization flags and profile-independent custom flags.",
+					"type": "string"
+				},
+				"icie.compile.additionalCppFlagsProfile": {
+					"default": "",
+					"description": "Additional C++ compilation flags used in Profile profile. The flags will be appended to the command line after the standard, warning, debug symbols, optimization flags and profile-independent custom flags.",
+					"type": "string"
+				},
+				"icie.compile.additionalCppFlagsRelease": {
+					"default": "",
+					"description": "Additional C++ compilation flags used in Release profile. The flags will be appended to the command line after the standard, warning, debug symbols, optimization flags and profile-independent custom flags.",
+					"type": "string"
+				},
+				"icie.compile.autoMoveToError": {
+					"default": true,
+					"description": "When a compilation error appears, the cursor will automatically move to the file and location which caused the error. Regardless of this setting, an error message containing error details will be shown.",
+					"type": "boolean"
+				},
+				"icie.compile.cppStandard": {
+					"default": "C++17",
+					"description": "C++ ISO language standard version. This corresponds to e.g. -std=c++17 flag on GCC/Clang. Be aware some of these options may not be supported by your compiler, which will result in an error.",
+					"enum": [
+						"C++03",
+						"C++11",
+						"C++14",
+						"C++17",
+						"C++20"
+					],
+					"type": "string"
+				},
+				"icie.compile.executableExtension": {
+					"default": "e",
+					"description": "An extension used to denote executable files. For example, if this entry is set to \"xyz\", compiling a source file called main.cpp will create an executable called main.xyz.",
+					"type": "string"
+				},
+				"icie.compile.windowsMingwPath": {
+					"default": "",
+					"description": "Custom path of your MinGW installation. If not set, ICIE will try, in order, \"C:\\MinGW\" and \"C:\\MinGW\\mingw32\".",
+					"type": "string"
+				},
+				"icie.dir.bruteForceStem": {
+					"default": "brute-force",
+					"description": "File stem of the brute force solution .cpp file. This is the a slow solution, which should not be sent to judging systems, but can be used for checking outputs during stress tests. For example, if this is set to \"brute-force\", the C++ file will be called \"brute-force.cpp\".",
+					"type": "string"
+				},
+				"icie.dir.checkerStem": {
+					"default": "checker",
+					"description": "File stem of the checker .cpp file. For tasks where there exist multiple correct answers, this is the program which will be called to check if a given answer is correct. If the source exists, the program will be called; otherwise, the answers will be checked for text equality. To read the test case as well as your and a correct answer, you should declare main in a different way than usual - `int main(int, char* argv[])` and open the test case files `ifstream in(argv[1]), my(argv[2]), out(argv[3])`. After that, use `in`, `my` and `out` in the same way as `cin`. If the answer is correct, the program should return a 0 exit code(e.g. normal return from main). If the answer is not, is should return a non-zero exit code, e.g. by using `exit(1)`. A good way to do so is with assertions, like `assert(index[i] <= n);`.",
+					"type": "string"
+				},
+				"icie.dir.cppExtension": {
+					"default": "cpp",
+					"description": "The file extension used for sources written in the C++ language.",
+					"type": "string"
+				},
+				"icie.dir.customTestsSubdirectory": {
+					"default": "user",
+					"description": "The subdirectory used for storing test cases entered by the user. See icie.dir.testsDirectory configuration entry for details.",
+					"type": "string"
+				},
+				"icie.dir.projectDirectory": {
+					"default": "~",
+					"description": "The directory where new projects will be created by default. For example, with this set to ~/Competitive, using Alt+F11 may create a ~/Competitive/rainbow-squirrel directory for the project.",
+					"type": "string"
+				},
+				"icie.dir.solutionStem": {
+					"default": "main",
+					"description": "File stem of the mail source file. This is the optimal solution, which should be tested, sent to judging systems for scoring etc. For example, if this is set to \"main\", the source will be called \"main.cpp\" (assuming C++ extension is set to \"cpp\").",
+					"type": "string"
+				},
+				"icie.dir.testGeneratorStem": {
+					"default": "test-generator",
+					"description": "File stem of the test generator .cpp file. This is a program that will generate a random test input and write it to stdout. Remember to initialize the random number generator with a subsecond-precision clock, such as clock(3) or std::chrono::high_resolution_clock. For example, if this is set to \"test-generator\", the C++ file will be called \"test-generator.cpp\".",
+					"type": "string"
+				},
+				"icie.dir.testsDirectory": {
+					"default": "tests",
+					"description": "The directory used for storing test cases. Usually, the directory will contain other subdirectories with files called ID.in or ID.out. For example, if this is set to \"tests\", test paths may look like tests/example/1.in or tests/user/3.out.",
+					"type": "string"
+				},
+				"icie.logger.enabled": {
+					"default": false,
+					"description": "Whether internal application logs should be written to the Developer Console. Too see them, open Help > Toggle Developer Tools, select the Console tab at the top and look for messages beginning with a pustaczek.icie tag.",
+					"type": "boolean"
+				},
+				"icie.paste.library.path": {
+					"default": "",
+					"description": "Path to your competitive programming library for use with the Alt+[ quickpasting feature. Press Alt+[ with this not set to see how to set up this functionality.",
+					"type": "string"
+				},
+				"icie.template.list": {
+					"additionalProperties": {
+						"anyOf": [
+							{
+								"type": "string"
+							}
+						]
+					},
+					"default": {
+						"C++ Brute force": "(replace this with a path to your brute force solution template)",
+						"C++ Checker": "(replace this with a path to your checker template)",
+						"C++ Test generator": "(replace this with a path to your test generator template)"
+					},
+					"description": "Paths to additional C++ template files. A list of these will appear when you press Alt+=; if you want to change the basic C++ template file, see the ICIE.Template.Solution configuration option instead. If you see \"Edit in settings.json\", click it, then add a new entry starting with \"icie.template.list\" and if you use autocomplete, VS Code should autofill the current config. Replace the path placeholder with a path to your template file, or add more templates.",
+					"type": "object"
+				},
+				"icie.template.solution": {
+					"default": "",
+					"description": "Path to your C++ template file. Set this to a value like `/home/jonsmith/template.cpp` or `C:\\Users\\JohnSmith\\template.cpp`. When opening a new task or contest, the contents of this file will be copy-pasted into main.cpp. Be sure to leave an empty line in the main function, because ICIE will then place the cursor there!",
+					"type": "string"
+				},
+				"icie.terminal.externalCommand": {
+					"default": "x-terminal-emulator",
+					"description": "The external terminal emulator that should be used on your system. Is set to `x-terminal-emulator`, a common alias for the default terminal emulator on many Linux systems. The command will be called like `x-terminal-emulator --title 'ICIE Thingy' -e 'bash'`.",
+					"type": "string"
+				},
+				"icie.test.timeLimit": {
+					"default": 1500,
+					"description": "The maximum time an executable can run before getting a Time Limit Exceeded verdict, specified in milliseconds. Leaving this empty(which denotes no limit) is not recommended, because this will cause stuck processes to run indefinitely, wasting system resources.",
+					"type": [
+						"null",
+						"number"
+					]
+				},
+				"icie.test.view.render.foldAc": {
+					"default": "Never",
+					"description": "This controls when to hide passing tests in test view by collapsing them into a thin color line. Even if this is not set, any failing tests will still be visible if the icie.test.view.scrollToFirstFailed option is enabled(as is by default).",
+					"enum": [
+						"Always",
+						"If any test failed",
+						"Never"
+					],
+					"type": "string"
+				},
+				"icie.test.view.render.hideAc": {
+					"default": "Never",
+					"description": "This controls when to hide passing tests in test view by not displaying them at all. Even if this is not set, any failing tests will still be visible if the icie.test.view.scrollToFirstFailed option is enabled(as is by default).",
+					"enum": [
+						"Always",
+						"If any test failed",
+						"Never"
+					],
+					"type": "string"
+				},
+				"icie.test.view.render.hideCopy": {
+					"default": false,
+					"description": "Whether to hide the \"Copy\" action in test view. Instead of using it, you can hover over the test cell and press Ctrl+C; if nothing else is selected, the cell contents will be copied automatically.",
+					"type": "boolean"
+				},
+				"icie.test.view.render.maxTestHeight": {
+					"default": 720,
+					"description": "The maximum height of a test case, expressed in pixels. If the test case would take up more than that, it will be clipped. The full test case can be seen by scrolling. Leave empty to denote no limit.",
+					"type": [
+						"null",
+						"number"
+					]
+				},
+				"icie.test.view.render.timeDisplayThreshold": {
+					"default": 100,
+					"description": "If a solution takes longer to execute than the specified number of milliseconds, a note with the execution duration will be displayed. Set to 0 to always display the timings, or to a large value to never display the timings.",
+					"type": "number"
+				},
+				"icie.test.view.scrollToFirstFailed": {
+					"default": true,
+					"description": "If the test view contains any failed tests, it will scroll the view so that the failure are visible. This will try to scroll so that the first failing test is as high on the screen as possible.",
+					"type": "boolean"
+				},
+				"icie.tutorial.disableAll": {
+					"default": false,
+					"description": "Disables all tutorials, like showing action icons without hovering in test view, or displaying instructions for adding new tests.",
+					"type": "boolean"
+				}
+			}
+		}
+	},
+	"activationEvents": [
+		"onCommand:icie.auth.resetFromUrl",
+		"onCommand:icie.auth.resetFromList",
+		"onCommand:icie.compile.manual",
+		"onCommand:icie.launch.statement",
+		"onCommand:icie.launch.nearby",
+		"onCommand:icie.launch.webTask",
+		"onCommand:icie.launch.webContest",
+		"onCommand:icie.open.scan",
+		"onCommand:icie.open.url",
+		"onCommand:icie.paste.quick",
+		"onCommand:icie.paste.qistruct",
+		"onCommand:icie.stress.open",
+		"onCommand:icie.submit.send",
+		"onCommand:icie.template.instantiate",
+		"onCommand:icie.template.configure",
+		"onCommand:icie.terminal.spawn",
+		"onCommand:icie.test.view",
+		"onCommand:icie.test.viewCurrent",
+		"onCommand:icie.test.input",
+		"workspaceContains:.icie",
+		"workspaceContains:.icie-contest"
+	],
+	"markdown": "github",
+	"qna": "marketplace",
+	"dependencies": {
+		"node-fetch": "2.6.0",
+		"keytar": "5.4.0"
+	},
+	"icon": "assets/icon.png",
+	"__metadata": {
+		"id": "dcd99423-fe2e-40d2-8a62-13f7fe202a17",
+		"publisherId": "6309aff6-6da9-4583-8b66-1a303af6cf0c",
+		"publisherDisplayName": "Mikael Mello",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1715783383262,
+		"pinned": false,
+		"source": "gallery",
+		"size": 6263471
+	}
+}
