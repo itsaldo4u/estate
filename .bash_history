@@ -171,3 +171,26 @@ git init
 git add.
 gh repo clone itsaldo4u/purelife-web-oasis
 https://github.com/itsaldo4u/purelife-web-oasis.git
+cd pure-life
+git init
+git add .
+git commit -m "First commit"
+git remote add origin https://github.com/itsaldo4u/purelife.git
+[200~git push -u origin main
+git push -u origin main
+git branch
+git checkout -b main
+git push -u origin main
+[200~https://github.com/itsaldo4u/visual-purelife-tweaks.git~
+git clone https://github.com/itsaldo4u/visual-purelife-tweaks.git
+git clone https://github.com/itsaldo4u/visual-purelife-tweaks.git
+git clone https://github.com/AntonOsika/gpt-engineer.git
+git clone https://github.com/itsaldo4u/purelife.git
+git clone https://github.com/itsaldo4u/visual-purelife-tweaks.git
+cd visual-purelife-tweaks
+cp -r public src index.htm tailwind.config.ts postcss.config.js vite.config.ts ../purelife/
+cp -r public src index.html tailwind.config.ts postcss.config.js vite.config.ts ../purelife/
+cd ../purelife
+npm install
+npm run dev
+git clone https://github.com/itsaldo4u/OnlineShop-Project.git
