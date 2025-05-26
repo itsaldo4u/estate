@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="dropdown">
+              <a href="#">Portfolio ▼</a>
+              <ul class="dropdown-menu">
+                <li><a href="#design">Design</a></li>
+                <li><a href="#development">Development</a></li>
+                <li><a href="#photography">Photography</a></li>
+              </ul>
+            </li>
+            <li><a href="#kontakto">Contact</a></li>
+            <li class="kerko"><input type="text" placeholder="Search..." /></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="seksioniPar" class="section">
+        <div class="content-wrapper">
+          <h1 class="slide-in">
+            Po Kerkoni <span>Shtepine</span> ideale per Familjen tuaj!
+          </h1>
+          <p class="slide-in">Ne e kemi <span>Celsin</span> e saj.</p>
+        </div>
+
+        <div class="main-icon" id="main-icon">
+          <img src="3logo.png" alt="+" />
+        </div>
+
+        <div class="icons-container" id="icons-container">
+          <div class="icon icon1" onclick="scrollToSection('seksioniPar')">
+            <div class="tail"></div>
+            <img src="gold-house.png" alt="1" />
+          </div>
+          <div class="icon icon2" onclick="scrollToSection('section2')">
+            <div class="tail"></div>
+            <img src="gold-house.png" alt="2" />
+          </div>
+          <div class="icon icon3" onclick="scrollToSection('section3')">
+            <div class="tail"></div>
+            <img src="gold-house.png" alt="3" />
+          </div>
+        </div>
+
+        <div class="background-image"></div>
+      </section>
+
+      <div class="slider">
+        <div class="slides-wrapper">
+          <div class="slide">
+            <a href="https://example1.com">
+              <img src="nje.jpg" alt="Slide 1" />
+              <div class="info">
+                <h3>Image 1 Title</h3>
+                <p>This is a description for the first image.</p>
+              </div>
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://example2.com">
+              <img src="dy.jpg" alt="Slide 2" />
+              <div class="info">
+                <h3>Image 2 Title</h3>
+                <p>This is a description for the second image.</p>
+              </div>
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://example3.com">
+              <img src="kater.jpg" alt="Slide 3" />
+              <div class="info">
+                <h3>Image 3 Title</h3>
+                <p>This is a description for the third image.</p>
+              </div>
+            </a>
+          </div>
+          <!-- Duplicate Slides for Smooth Loop -->
+          <div class="slide">
+            <a href="https://example1.com">
+              <img src="nje.jpg" alt="Slide 4" />
+              <div class="info">
+                <h3>Image 1 Title</h3>
+                <p>This is a description for the first image.</p>
+              </div>
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://example2.com">
+              <img src="dy.jpg" alt="Slide 5" />
+              <div class="info">
+                <h3>Image 2 Title</h3>
+                <p>This is a description for the second image.</p>
+              </div>
+            </a>
+          </div>
+          <div class="slide">
+            <a href="https://example3.com">
+              <img src="kater.jpg" alt="Slide 6" />
+              <div class="info">
+                <h3>Image 3 Title</h3>
+                <p>This is a description for the third image.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <section id="about" class="about-section">
+        <div class="moving-line"></div>
+        <div class="container">
+          <h2>Rreth Nesh</h2>
+          <p>
+            Ne jemi një kompani lider në tregun e pasurive të paluajtshme, duke
+            ndihmuar klientët tanë të gjejnë shtëpinë e tyre të ëndrrave.
+          </p>
+          <p>
+            Me përvojë shumëvjeçare dhe një ekip profesional, ne ofrojmë
+            shërbime të specializuara për blerje, shitje dhe investime në prona.
+          </p>
+        </div>
+        <div class="background-image-two"></div>
+      </section>
+
+      <section id="kontakto" class="contact">
+        <h2>Contact Us</h2>
+        <p>Have a project in mind? We'd love to hear from you!</p>
+        <form>
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <textarea placeholder="Your message"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+  </body>
+  <script>
+    // Function to show the content box
+    // function showContent() {
+    //   let content = document.getElementById("content-box");
+    //   content.classList.add("show");
+    // }
+
+    // Function to hide the content box
+    // function hideContent() {
+    //   let content = document.getElementById("content-box");
+    //   content.classList.remove("show");
+    // }
+    // document.getElementById("main-icon").addEventListener("click", function () {
+    //   let container = document.getElementById("icons-container");
+    //   let icons = document.querySelectorAll(".icon");
+    //   let mainIcon = document.getElementById("main-icon");
+
+    //   // Toggle icons visibility and main icon animation
+    //   container.classList.toggle("show");
+    //   mainIcon.classList.toggle("active");
+
+    //   if (container.classList.contains("show")) {
+    //     icons.forEach((icon, index) => {
+    //       setTimeout(() => {
+    //         icon.style.opacity = "1"; // Show the icons
+    //         icon.classList.add("show");
+    //       }, index * 100); // Delay for each icon (to animate one after another)
+    //     });
+    //   } else {
+    //     icons.forEach((icon) => {
+    //       icon.style.opacity = "0"; // Hide the icons
+    //       icon.classList.remove("show");
+    //     });
+    //   }
+    // });
+
+    // function scrollToSection(sectionId) {
+    //   const section = document.getElementById(sectionId);
+    //   if (section) {
+    //     section.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
+    //   }
+    // }
+    // Function to toggle visibility of the content box
+    // function toggleContent() {
+    //   const contentBox = document.getElementById("content-box");
+    //   contentBox.classList.toggle("show"); // Toggle 'show' class
+    // }
+
+    // // Function to hide the content box when "Close" button is clicked
+    // function hideContent() {
+    //   const contentBox = document.getElementById("content-box");
+    //   contentBox.classList.remove("show"); // Remove 'show' class to hide it
+    // }
+    /*function showContent() {
+      document.getElementById("content-box").classList.add("show");
+    }
+
+    function hideContent() {
+      document.getElementById("content-box").classList.remove("show");
+    } */
+
+    // Logic for showing the icons when hovering over the main icon
+    // const mainIcon = document.getElementById("main-icon");
+    // const iconsContainer = document.getElementById("icons-container");
+
+    // mainIcon.addEventListener("mouseover", () => {
+    //   iconsContainer.classList.add("show");
+    // });
+
+    // mainIcon.addEventListener("mouseout", () => {
+    //   iconsContainer.classList.remove("show");
+    // });
+
+    // // Function for scrolling to sections (you can modify the scroll behavior as per your needs)
+    // function scrollToSection(sectionId) {
+    //   const section = document.getElementById(sectionId);
+    //   if (section) {
+    //     section.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
+    //   }
+    // }
+
+    // Slider functionality
+    //     document.addEventListener("DOMContentLoaded", function () {
+    //       let slider = document.querySelector(".slider");
+    //       let slides = document.querySelectorAll(".slide");
+    //       let totalSlides = slides.length;
+    //       let currentIndex = 0;
+
+    //       function moveSlide() {
+    //         currentIndex++;
+    //         if (currentIndex >= totalSlides) {
+    //           currentIndex = 0;
+    //         }
+    //         let offset = -currentIndex * slides[0].clientWidth;
+    //         slider.style.transform = `translateX(${offset}px)`;
+    //       }
+
+    //       setInterval(moveSlide, 3000); // Change image every 3 seconds
+    //     });
+
+    //     // Scroll animation for elements with the class "slide-in"
+    //     document.addEventListener("DOMContentLoaded", function () {
+    //   const elements = document.querySelectorAll(".about-section"); // Only targeting about-section if you want to reveal that specifically
+
+    //   function checkScroll() {
+    //     elements.forEach((element) => {
+    //       const position = element.getBoundingClientRect().top;
+    //       if (position < window.innerHeight - 100) {
+    //         element.classList.add("visible");
+    //       }
+    //     });
+    //   }
+
+    //   window.addEventListener("scroll", checkScroll);
+    //   checkScroll(); // Run on page load
+    // });
+
+    // Function to toggle the visibility of dynamic buttons
+    function showContent() {
+      document.getElementById("content-box").classList.add("show");
+    }
+
+    function hideContent() {
+      document.getElementById("content-box").classList.remove("show");
+    }
+
+    // Logic for showing the icons when hovering over the main icon
+    const mainIcon = document.getElementById("main-icon");
+    const iconsContainer = document.getElementById("icons-container");
+
+    mainIcon.addEventListener("mouseover", () => {
+      iconsContainer.classList.add("show");
+    });
+
+    mainIcon.addEventListener("mouseout", () => {
+      iconsContainer.classList.remove("show");
+    });
+
+    // Function for scrolling to sections (you can modify the scroll behavior as per your needs)
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Function to scroll to a specific section
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
+      }
+    }
+  </script>
+  <footer>
+    <p>© 2025 Creative Edge. All rights reserved.</p>
+  </footer>
+</html>
